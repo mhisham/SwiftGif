@@ -91,9 +91,6 @@ extension UIImage {
 
         delay = delayObject as? Double ?? 0
 
-        if delay < 0.1 {
-            delay = 0.1 // Make sure they're not too fast
-        }
 
         return delay
     }
@@ -163,6 +160,7 @@ extension UIImage {
             let delaySeconds = UIImage.delayForImageAtIndex(Int(i),
                 source: source)
             delays.append(Int(delaySeconds * 1000.0)) // Seconds to ms
+            
         }
 
         // Calculate full duration
@@ -194,7 +192,7 @@ extension UIImage {
         // Heyhey
         let animation = UIImage.animatedImage(with: frames,
             duration: Double(duration) / 1000.0)
-
+       
         return animation
     }
 
